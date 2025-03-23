@@ -10,7 +10,11 @@ const config: Config = {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#00FF00",
+      },
+    },
   },
   plugins: [],
 };

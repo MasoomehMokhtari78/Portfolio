@@ -1,8 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@theme {
+  --color-primary: #02de5a;
+}
+
 body {
     @apply bg-cyan-950 text-white;
+    font-family: var(--font-vt323), monospace;
   }
   
   .dark body {
