@@ -15,7 +15,8 @@ export const Header = () => {
   return (
     <header
       className="h-full 
-      w-11/12 
+      w-full 
+      sticky
       bg-white-400 
       rounded-full
       bg-clip-padding 
@@ -23,7 +24,6 @@ export const Header = () => {
       backdrop-blur-sm 
       bg-opacity-40
       p-2
-      m-4
     "
     >
       <div className="container mx-auto flex justify-between items-center">

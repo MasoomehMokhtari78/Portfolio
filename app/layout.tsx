@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Roboto_Mono, VT323, IBM_Plex_Mono } from "next/font/google";
+import { Roboto_Mono, VT323, Tektur } from "next/font/google";
 import "./globals.css";
+import { Header } from "@/components/Header";
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",
@@ -11,6 +12,11 @@ const vt323 = VT323({
   variable: "--font-vt323",
   subsets: ["latin"],
   weight: "400",
+});
+
+const tekur = Tektur({
+  variable: "--font-tekur",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +31,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${vt323.variable} antialiased`}>{children}</body>
+      <body
+        className={`${vt323.variable} ${robotoMono.variable} ${tekur.variable} antialiased`}
+      >
+        <div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
+        <div className="flex items-center p-16">
+          <div className="w-full max-w-[1500px]">
+            <Header />
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

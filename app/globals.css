@@ -5,9 +5,17 @@
   --color-primary: #02de5a;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
     @apply bg-cyan-950 text-white;
     font-family: var(--font-vt323), monospace;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-tekur), monospace;
   }
   
   .dark body {
