@@ -21,3 +21,23 @@ body {
   .dark body {
     @apply bg-gray-900 text-white;
   }
+
+  .gradient-fade-left,
+.gradient-fade-right {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gradient-fade-left {
+  left: 0;
+  background: linear-gradient(to right, rgb(1, 9, 30), transparent);
+}
+
+.gradient-fade-right {
+  right: 0;
+  background: linear-gradient(to left, rgb(1, 9, 30), transparent);
+}
