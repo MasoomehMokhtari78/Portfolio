@@ -33,7 +33,7 @@ const technologies = [
 
 export const Technologies = () => {
   return (
-    <>
+    <div className="w-full">
       <div className="flex gap-2 items-center">
         <Layers size={14} />
         <h4>Stacks</h4>
@@ -69,6 +69,6 @@ export const Technologies = () => {
           ))}
         </motion.div>
       </div>
-    </>
+    </div>
   );
 };

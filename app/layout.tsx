@@ -32,11 +32,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${vt323.variable} ${robotoMono.variable} ${tekur.variable} antialiased`}
+        className={`${vt323.variable} ${robotoMono.variable} ${tekur.variable} antialiased relative overflow-x-hidden`}
       >
-        <div className="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
-        <div className="flex items-center p-16">
-          <div className="w-full max-w-[1500px]">
+        <div className="absolute top-0 z-[-2] w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] min-h-screen h-full"></div>
+        <div className="flex justify-center p-16">
+          <div className="w-full max-w-[1500px] h-fit">
             <Header />
             {children}
           </div>
