@@ -46,7 +46,7 @@ export const Technologies = () => {
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
         >
-          {technologies.concat(technologies).map(({ icon, color }, index) => (
+          {technologies.map(({ icon, color }, index) => (
             <motion.span
               key={index}
               className="text-xl font-semibold px-4 py-2 rounded-lg shadow-md transition duration-300"

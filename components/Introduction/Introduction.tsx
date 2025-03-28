@@ -1,6 +1,12 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { Button } from "../ui/button";
+import { siGithub } from "simple-icons";
+import { motion } from "framer-motion";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa6";
+import GlowingButton from "../GlowingButton";
 
 const adjectives = [
   "responsive",
@@ -8,6 +14,12 @@ const adjectives = [
   "modern",
   "elegant",
   "user-friendly",
+];
+
+const contacts = [
+  <FaGithub className="text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-110" />,
+
+  <FaLinkedin className="text-gray-500 hover:text-[#0075b3] transition-all duration-300 transform hover:scale-110" />,
 ];
 
 export const Introduction = () => {
@@ -41,7 +53,7 @@ export const Introduction = () => {
   }, [charIndex, isDeleting, index]);
 
   return (
-    <section className="text-center my-10">
+    <section className="text-center my-10 flex flex-col gap-8">
       <h2 className="text-3xl font-bold">
         I'm Masoomeh, a frontend developer making
         <br />
@@ -50,6 +62,21 @@ export const Introduction = () => {
         <br />
         websites with React.
       </h2>
+      <div className="w-52">
+        <GlowingButton>
+          <h3 className="text-xl">Contact Me</h3>
+        </GlowingButton>
+      </div>
+      <div className="flex w-full justify-center">
+        {contacts.map((icon, index) => (
+          <motion.span
+            className="text-xl font-semibold px-4 py-2 rounded-lg shadow-md transition duration-300"
+            whileHover={{ scale: 1.5 }}
+          >
+            <a key={`${index}`}>{icon}</a>
+          </motion.span>
+        ))}
+      </div>
     </section>
   );
 };
