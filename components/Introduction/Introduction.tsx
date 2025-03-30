@@ -6,7 +6,7 @@ import { siGithub } from "simple-icons";
 import { motion } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-import GlowingButton from "../GlowingButton";
+import GlowingButton from "../ui/GlowingButton";
 
 const adjectives = [
   "responsive",
@@ -53,7 +53,7 @@ export const Introduction = () => {
   }, [charIndex, isDeleting, index]);
 
   return (
-    <section className="text-center my-10 flex flex-col gap-8">
+    <section className="text-center my-10 flex flex-col items-center gap-8">
       <h2 className="text-3xl font-bold">
         I'm Masoomeh, a frontend developer making
         <br />
