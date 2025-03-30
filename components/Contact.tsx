@@ -1,6 +1,6 @@
 "use client";
 import { z } from "zod";
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "./ui/form";
@@ -8,6 +8,7 @@ import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { Mail } from "lucide-react";
+import { motion, useInView } from "framer-motion";
 
 const formSchema = z.object({
   name: z.string(),
@@ -17,15 +18,17 @@ const formSchema = z.object({
 
 const fields: {
   name: string;
-  placehoder: string;
+  placeholder: string;
   type?: string;
-} = [
+}[] = [
   { name: "name", placeholder: "please enter your name" },
   { name: "email", placeholder: "please enter your email" },
   { name: "description", placeholder: "", type: "textarea" },
 ];
 
 export const Contact = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -37,7 +40,13 @@ export const Contact = () => {
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {};
   return (
-    <div className="w-full flex flex-col gap-4">
+    <motion.div
+      ref={ref}
+      className="w-full flex flex-col gap-4"
+      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 1, ease: "easeOut" }}
+    >
       <div className="flex gap-2">
         <Mail fontSize={14} />
         <h3>Contact Me</h3>
@@ -66,6 +75,6 @@ export const Contact = () => {
           <Button type="submit">Send</Button>
         </form>
       </Form>
-    </div>
+    </motion.div>
   );
 };
