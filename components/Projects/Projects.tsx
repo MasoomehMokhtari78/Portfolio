@@ -54,20 +54,16 @@ export const Projects = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className={`w-full flex ${
-              index % 2 === 0 ? "justify-start" : "justify-end"
-            }`}
+            className={`w-full flex `}
           >
             <Card className="w-full shadow-lg">
               <CardContent
-                className={`flex ${
-                  index % 2 === 0 ? undefined : "flex-row-reverse"
-                } items-center gap-4 p-4`}
+                className={`flex  items-center gap-4 p-4 flex-wrap justify-center`}
               >
                 <Image
                   alt="project image"
                   src={image}
-                  width={300}
+                  width={400}
                   height={200}
                 />
                 <CardFooter className="flex flex-col gap-2 items-start w-full p-0">
