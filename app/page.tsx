@@ -11,7 +11,9 @@ export default function Home() {
         <Introduction />
         {/* <Technologies /> */}
         <Projects />
-        <Contact />
+        <div id="contact-section" className="w-full">
+          <Contact />
+        </div>
       </main>
     </>
   );

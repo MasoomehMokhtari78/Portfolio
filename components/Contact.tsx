@@ -51,13 +51,22 @@ export const Contact = () => {
         <Mail fontSize={14} />
         <h3>Contact Me</h3>
       </div>
+      <p>
+        You can write me a message or contact me directly at:{" "}
+        <a
+          className="text-xl cursor-pointer hover:underline"
+          href="mailto:masoomehmokhtari693@gmail.com"
+        >
+          masoomehmokhtari693@gmail.com
+        </a>
+      </p>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           {fields.map(({ name, placeholder, type }) => (
             <FormField
               key={name}
               control={form.control}
-              name={name as string}
+              name={name}
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>{name}</FormLabel>

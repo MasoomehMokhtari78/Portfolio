@@ -1,8 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Button } from "../ui/button";
-import { siGithub } from "simple-icons";
 import { motion } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
@@ -52,6 +50,12 @@ export const Introduction = () => {
     return () => clearTimeout(handleTyping);
   }, [charIndex, isDeleting, index]);
 
+  const scrollToContact = () => {
+    document
+      .getElementById("contact-section")
+      ?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="text-center my-10 flex flex-col items-center gap-8">
       <h2 className="text-3xl font-bold">
@@ -63,17 +67,18 @@ export const Introduction = () => {
         websites with React.
       </h2>
       <div className="w-52">
-        <GlowingButton>
+        <GlowingButton onClick={scrollToContact}>
           <h3 className="text-xl">Contact Me</h3>
         </GlowingButton>
       </div>
       <div className="flex w-full justify-center">
         {contacts.map((icon, index) => (
           <motion.span
-            className="text-xl font-semibold px-4 py-2 rounded-lg shadow-md transition duration-300"
+            className="text-xl font-semibold px-4 py-2"
             whileHover={{ scale: 1.5 }}
+            key={`${index}`}
           >
-            <a key={`${index}`}>{icon}</a>
+            <a>{icon}</a>
           </motion.span>
         ))}
       </div>
