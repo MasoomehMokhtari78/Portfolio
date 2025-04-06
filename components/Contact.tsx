@@ -28,7 +28,7 @@ const fields: {
 
 export const Contact = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
+  const isInView = useInView(ref);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
