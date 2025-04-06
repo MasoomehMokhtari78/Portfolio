@@ -23,7 +23,7 @@ const fields: {
 }[] = [
   { name: "name", placeholder: "please enter your name" },
   { name: "email", placeholder: "please enter your email" },
-  { name: "description", placeholder: "", type: "textarea" },
+  { name: "desc", placeholder: "", type: "textarea" },
 ];
 
 export const Contact = () => {
