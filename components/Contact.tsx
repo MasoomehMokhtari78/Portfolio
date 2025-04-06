@@ -38,7 +38,9 @@ export const Contact = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {};
+  const onSubmit = () =>
+    // values: z.infer<typeof formSchema>
+    {};
   return (
     <motion.div
       ref={ref}

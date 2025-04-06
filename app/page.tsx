@@ -1,8 +1,6 @@
 import { Contact } from "@/components/Contact";
-import { Header } from "@/components/Header";
 import { Introduction } from "@/components/Introduction/Introduction";
 import { Projects } from "@/components/Projects/Projects";
-import { Technologies } from "@/components/Technologies";
 
 export default function Home() {
   return (

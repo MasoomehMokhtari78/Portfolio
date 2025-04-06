@@ -15,9 +15,15 @@ const adjectives = [
 ];
 
 const contacts = [
-  <FaGithub className="text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-110" />,
+  <FaGithub
+    className="text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-110"
+    key="githubIcon"
+  />,
 
-  <FaLinkedin className="text-gray-500 hover:text-[#0075b3] transition-all duration-300 transform hover:scale-110" />,
+  <FaLinkedin
+    className="text-gray-500 hover:text-[#0075b3] transition-all duration-300 transform hover:scale-110"
+    key="linkedinIcon"
+  />,
 ];
 
 export const Introduction = () => {
@@ -59,7 +65,7 @@ export const Introduction = () => {
   return (
     <section className="text-center my-10 flex flex-col items-center gap-8">
       <h2 className="text-3xl font-bold">
-        I'm Masoomeh, a frontend developer making
+        I&apos;m Masoomeh, a frontend developer making
         <br />
         <span className="text-primary">{currentWord}</span>
         <span className="text-primary">|</span>
