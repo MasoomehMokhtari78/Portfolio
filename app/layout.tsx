@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto_Mono, VT323, Tektur } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import React from "react";
 
 const robotoMono = Roboto_Mono({
   variable: "--font-roboto-mono",

@@ -1,7 +1,7 @@
 import { Contact } from "@/components/Contact";
 import { Introduction } from "@/components/Introduction/Introduction";
 import { Projects } from "@/components/Projects/Projects";
-
+import React from "react";
 export default function Home() {
   return (
     <>
