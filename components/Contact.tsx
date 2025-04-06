@@ -17,7 +17,7 @@ const formSchema = z.object({
 });
 
 const fields: {
-  name: string;
+  name: "name" | "email" | "desc";
   placeholder: string;
   type?: string;
 }[] = [
