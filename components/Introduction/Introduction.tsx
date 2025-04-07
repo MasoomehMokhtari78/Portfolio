@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import GlowingButton from "../ui/GlowingButton";
+import { scrollToSection } from "@/lib/utils";
 
 const adjectives = [
   "responsive",
@@ -56,12 +57,6 @@ export const Introduction = () => {
     return () => clearTimeout(handleTyping);
   }, [charIndex, isDeleting, index]);
 
-  const scrollToContact = () => {
-    document
-      .getElementById("contact-section")
-      ?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="text-center my-10 flex flex-col items-center gap-8">
       <h2 className="text-3xl font-bold">
@@ -73,7 +68,7 @@ export const Introduction = () => {
         websites with React.
       </h2>
       <div className="w-52">
-        <GlowingButton onClick={scrollToContact}>
+        <GlowingButton onClick={() => scrollToSection("contact-section")}>
           <h3 className="text-xl">Contact Me</h3>
         </GlowingButton>
       </div>

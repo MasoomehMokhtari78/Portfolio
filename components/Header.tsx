@@ -8,9 +8,14 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
+import { scrollToSection } from "@/lib/utils";
 
 export const Header = () => {
-  const navItems = ["Home", "About", "Services", "Contact"];
+  const navItems = [
+    { name: "Stack", id: "stack" },
+    { name: "Project", id: "projects" },
+    { name: "Contact", id: "contact-section" },
+  ];
 
   return (
     <header
@@ -30,14 +35,15 @@ export const Header = () => {
         <h1 className="text-2xl font-bold">M</h1>
         <div className="flex gap-4 items-center">
           <nav className="hidden md:flex space-x-4">
-            {navItems.map((item) => (
-              <a
-                key={item}
-                href="#"
+            {navItems.map(({ name, id }) => (
+              <Button
+                key={id}
+                variant="ghost"
                 className="hover:text-primary transition duration-300 ease-in-out"
+                onClick={() => scrollToSection(id)}
               >
-                {item}
-              </a>
+                {name}
+              </Button>
             ))}
           </nav>
           <div className="md:hidden">
@@ -52,14 +58,17 @@ export const Header = () => {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-white-400 backdrop-blur-sm bg-opacity-40 rounded-md border-2 border-primary translate-x-[-10px]">
-                {navItems.map((item) => (
-                  <DropdownMenuItem key={item} asChild>
-                    <a
-                      href="#"
+                {navItems.map(({ name, id }) => (
+                  <DropdownMenuItem key={id} asChild>
+                    <Button
+                      variant="ghost"
                       className="hover:text-primary transition duration-300 ease-in-out block"
+                      onClick={(e) => {
+                        setTimeout(() => scrollToSection(id), 150);
+                      }}
                     >
-                      {item}
-                    </a>
+                      {name}
+                    </Button>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
