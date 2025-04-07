@@ -8,7 +8,9 @@ export default function Home() {
       <main className="flex flex-col gap-[64px] row-start-2 items-center max-w-[600px]">
         <Introduction />
         {/* <Technologies /> */}
-        <Projects />
+        <div>
+          <Projects />
+        </div>
         <div id="contact-section" className="w-full">
           <Contact />
         </div>

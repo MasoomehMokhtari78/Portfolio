@@ -65,9 +65,14 @@ export const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <Button variant="outline" className="border-primary">
-            Resume
-          </Button>
+          <a
+            href="https://drive.google.com/file/d/1XMcbr_K3qLSDt76hOUidMUA4tdLpZA-x/view?usp=sharing"
+            target="_blank"
+          >
+            <Button variant="outline" className="border-primary">
+              Resume
+            </Button>
+          </a>
         </div>
       </div>
     </header>
