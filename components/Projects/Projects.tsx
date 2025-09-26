@@ -31,7 +31,7 @@ const projects = [
   {
     title: "Code Snippet",
     desc: "Create, customize, and share beautiful code snippets. Export as SVG or PNG with ease.",
-    image: "/images/code-snippet.png",
+    image: "/images/code-snippet.PNG",
     demo: "https://code-snippet-eta.vercel.app/",
     github: "https://github.com/MasoomehMokhtari78/code-snippet",
   },
