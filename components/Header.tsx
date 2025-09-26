@@ -63,7 +63,7 @@ export const Header = () => {
                     <Button
                       variant="ghost"
                       className="hover:text-primary transition duration-300 ease-in-out block"
-                      onClick={(e) => {
+                      onClick={() => {
                         setTimeout(() => scrollToSection(id), 150);
                       }}
                     >
