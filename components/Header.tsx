@@ -74,10 +74,7 @@ export const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <a
-            href="https://drive.google.com/file/d/1XMcbr_K3qLSDt76hOUidMUA4tdLpZA-x/view?usp=sharing"
-            target="_blank"
-          >
+          <a href="Masoomeh_Mokhtari_Resume.pdf" target="_blank">
             <Button variant="outline" className="border-primary">
               Resume
             </Button>

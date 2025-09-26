@@ -10,30 +10,37 @@ import {
   CardFooter,
   CardTitle,
 } from "../ui/card";
-import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const projects = [
   {
-    title: "Project",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris",
-    image: "/images/example.jfif",
-    demo: "#",
-    github: "#",
+    title: "Finance+",
+    desc: "Track and analyze your finances with interactive charts and AI-powered insights.",
+    image: "/images/finance.png",
+    demo: "https://dashboard-git-eng-masoomehmokhtaris-projects.vercel.app/",
+    github: "https://github.com/MasoomehMokhtari78/dashboard",
   },
   {
-    title: "Project",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris",
-    image: "/images/example.jfif",
-    demo: "#",
-    github: "#",
+    title: "Import Graph",
+    desc: "Visualize your React project structure as an interactive dependency graph.",
+    image: "/images/import-graph.png",
+    demo: "https://import-graph.vercel.app/",
+    github: "https://github.com/MasoomehMokhtari78/import-graph",
   },
   {
-    title: "Project",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris",
-    image: "/images/example.jfif",
-    demo: "#",
-    github: "#",
+    title: "Code Snippet",
+    desc: "Create, customize, and share beautiful code snippets. Export as SVG or PNG with ease.",
+    image: "/images/code-snippet.png",
+    demo: "https://code-snippet-eta.vercel.app/",
+    github: "https://github.com/MasoomehMokhtari78/code-snippet",
+  },
+  {
+    title: "Hue Editor",
+    desc: "Work-in-progress tool for building interactive learning cards with text editing and rearrangement.",
+    image: "/images/hue-editor.png",
+    demo: "https://hue-text-editor.vercel.app/",
+    github: "https://github.com/MasoomehMokhtari78/Text-Editor",
   },
 ];
 
@@ -46,7 +53,7 @@ export const Projects = () => {
       </div>
 
       <div className="flex flex-col gap-8">
-        {projects.map(({ title, desc, image }, index) => (
+        {projects.map(({ title, desc, image, demo, github }, index) => (
           <motion.div
             key={`${title} ${desc} ${index}`}
             initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
@@ -59,11 +66,10 @@ export const Projects = () => {
               <CardContent
                 className={`flex  items-center gap-4 p-4 flex-wrap justify-center`}
               >
-                <Image
+                <img
                   alt="project image"
                   src={image}
-                  width={400}
-                  height={200}
+                  style={{ width: "100%" }}
                 />
                 <CardFooter className="flex flex-col gap-2 items-start w-full p-0">
                   <CardTitle>
@@ -73,8 +79,12 @@ export const Projects = () => {
                     {desc}
                   </CardDescription>
                   <CardAction className="flex gap-2 mt-2">
-                    <Button>Demo</Button>
-                    <Button variant="outline">Github</Button>
+                    <Link href={demo} passHref target="_blank">
+                      <Button>Demo</Button>
+                    </Link>
+                    <Link href={github} passHref target="_blank">
+                      <Button variant="outline">Github</Button>
+                    </Link>
                   </CardAction>
                 </CardFooter>
               </CardContent>

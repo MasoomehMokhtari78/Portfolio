@@ -16,15 +16,23 @@ const adjectives = [
 ];
 
 const contacts = [
-  <FaGithub
-    className="text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-110"
-    key="githubIcon"
-  />,
+  <a
+    href="https://github.com/MasoomehMokhtari78"
+    target="_blank"
+    rel="noopener noreferrer"
+    key="githubLink"
+  >
+    <FaGithub className="text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-110" />
+  </a>,
 
-  <FaLinkedin
-    className="text-gray-500 hover:text-[#0075b3] transition-all duration-300 transform hover:scale-110"
-    key="linkedinIcon"
-  />,
+  <a
+    href="https://www.linkedin.com/in/masoomehmokhtari78/"
+    target="_blank"
+    rel="noopener noreferrer"
+    key="linkedinLink"
+  >
+    <FaLinkedin className="text-gray-500 hover:text-[#0075b3] transition-all duration-300 transform hover:scale-110" />
+  </a>,
 ];
 
 export const Introduction = () => {
