@@ -34,7 +34,7 @@ const technologies = [
 export const Technologies = () => {
   return (
     <div className="w-full flex justify-center">
-      <div className="max-w-[800px]">
+      <div className="max-w-[280px] sm:max-w-[400px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[900px] 2xl:max-w-[1200px] w-full mx-auto">
         <div className="flex gap-2 items-center">
           <Layers size={14} />
           <h4>Stack</h4>

@@ -36,7 +36,7 @@ export default function RootLayout({
         className={`${vt323.variable} ${robotoMono.variable} ${tekur.variable} antialiased relative overflow-x-hidden`}
       >
         <div className="absolute top-0 z-[-2] w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px] min-h-screen h-full"></div>
-        <div className="flex justify-center sm:p-8 md:p-16">
+        <div className="flex justify-center p-4 md:p-16">
           <div className="md:max-w-[1500px] sm:max-w-full h-fit flex flex-col items-center">
             <Header />
             {children}
