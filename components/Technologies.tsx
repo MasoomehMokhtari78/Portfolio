@@ -33,41 +33,45 @@ const technologies = [
 
 export const Technologies = () => {
   return (
-    <div className="w-full">
-      <div className="flex gap-2 items-center">
-        <Layers size={14} />
-        <h4>Stacks</h4>
-      </div>
-      <div className="relative overflow-hidden text-white py-4 w-full">
-        <div className="gradient-fade-left"></div>
-        <div className="gradient-fade-right"></div>
-        <motion.div
-          className="flex space-x-8 w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-        >
-          {technologies.map(({ icon, color }, index) => (
-            <motion.span
-              key={index}
-              className="text-xl font-semibold px-4 py-2 rounded-lg shadow-md transition duration-300"
-              whileHover={{ scale: 1.2 }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="w-8 h-8 transition-colors duration-300"
-                style={{
-                  fill: "white",
-                  transition: "fill 0.3s ease",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.fill = color)}
-                onMouseLeave={(e) => (e.currentTarget.style.fill = "white")}
-              >
-                <path d={icon.path} />
-              </svg>
-            </motion.span>
-          ))}
-        </motion.div>
+    <div className="w-full flex justify-center">
+      <div className="max-w-[800px]">
+        <div className="flex gap-2 items-center">
+          <Layers size={14} />
+          <h4>Stacks</h4>
+        </div>
+        <div className="relative overflow-hidden text-white py-4 w-full">
+          <div className="gradient-fade-left"></div>
+          <div className="gradient-fade-right"></div>
+          <motion.div
+            className="flex space-x-8 w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          >
+            {[...technologies, ...technologies].map(
+              ({ icon, color }, index) => (
+                <motion.span
+                  key={index}
+                  className="text-xl font-semibold px-4 py-2 rounded-lg shadow-md transition duration-300"
+                  whileHover={{ scale: 1.2 }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="w-8 h-8 transition-colors duration-300"
+                    style={{
+                      fill: "white",
+                      transition: "fill 0.3s ease",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.fill = color)}
+                    onMouseLeave={(e) => (e.currentTarget.style.fill = "white")}
+                  >
+                    <path d={icon.path} />
+                  </svg>
+                </motion.span>
+              )
+            )}
+          </motion.div>
+        </div>
       </div>
     </div>
   );

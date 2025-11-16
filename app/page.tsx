@@ -6,7 +6,7 @@ import React from "react";
 export default function Home() {
   return (
     <>
-      <main className="flex flex-col gap-[64px] row-start-2 items-center max-w-[600px]">
+      <main className="flex flex-col gap-[64px] row-start-2 items-center max-w-[800px]">
         <Introduction />
         <div id="stack">
           <Technologies />
