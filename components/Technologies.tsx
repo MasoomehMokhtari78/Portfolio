@@ -37,7 +37,7 @@ export const Technologies = () => {
       <div className="max-w-[800px]">
         <div className="flex gap-2 items-center">
           <Layers size={14} />
-          <h4>Stacks</h4>
+          <h4>Stack</h4>
         </div>
         <div className="relative overflow-hidden text-white py-4 w-full">
           <div className="gradient-fade-left"></div>

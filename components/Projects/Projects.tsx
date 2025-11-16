@@ -2,14 +2,7 @@
 import { Palette } from "lucide-react";
 import { motion } from "framer-motion";
 import React from "react";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardTitle,
-} from "../ui/card";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
@@ -52,43 +45,42 @@ export const Projects = () => {
         <h3 className="text-lg font-semibold">My Projects</h3>
       </div>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 max-w-[600px]">
         {projects.map(({ title, desc, image, demo, github }, index) => (
           <motion.div
-            key={`${title} ${desc} ${index}`}
+            key={`${title}-${index}`}
             initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
-            className={`w-full flex `}
+            className="w-full flex relative"
           >
-            <Card className="w-full shadow-lg">
-              <CardContent
-                className={`flex  items-center gap-4 p-4 flex-wrap justify-center`}
-              >
-                <img
-                  alt="project image"
-                  src={image}
-                  style={{ width: "100%" }}
-                />
-                <CardFooter className="flex flex-col gap-2 items-start w-full p-0">
-                  <CardTitle>
-                    <h4 className="text-xl font-semibold">{title}</h4>
-                  </CardTitle>
-                  <CardDescription className="text-gray-600">
-                    {desc}
-                  </CardDescription>
-                  <CardAction className="flex gap-2 mt-2">
-                    <Link href={demo} passHref target="_blank">
-                      <Button>Demo</Button>
+            <CardSpotlight className="relative w-full p-4 overflow-visible rounded-xl">
+              <div className="relative z-20 flex flex-col gap-4 items-center justify-center w-full">
+                <div className="relative w-full h-64 overflow-hidden group">
+                  <motion.img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full rounded-md cursor-pointer"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2 items-start w-full mt-4">
+                  <h4 className="text-xl font-semibold text-white">{title}</h4>
+                  <p className="text-neutral-300">{desc}</p>
+                  <div className="flex gap-2 mt-2">
+                    <Link href={demo} target="_blank">
+                      <Button className="text-xl">Demo</Button>
                     </Link>
-                    <Link href={github} passHref target="_blank">
-                      <Button variant="outline">Github</Button>
+                    <Link href={github} target="_blank">
+                      <Button variant="outline" className="text-xl">
+                        Github
+                      </Button>
                     </Link>
-                  </CardAction>
-                </CardFooter>
-              </CardContent>
-            </Card>
+                  </div>
+                </div>
+              </div>
+            </CardSpotlight>
           </motion.div>
         ))}
       </div>
