@@ -22,7 +22,7 @@ const contacts = [
     rel="noopener noreferrer"
     key="githubLink"
   >
-    <FaGithub className="text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-110" />
+    <FaGithub className="text-3xl text-gray-500 hover:text-white transition-all duration-300 transform hover:scale-110" />
   </a>,
 
   <a
@@ -31,7 +31,7 @@ const contacts = [
     rel="noopener noreferrer"
     key="linkedinLink"
   >
-    <FaLinkedin className="text-gray-500 hover:text-[#0075b3] transition-all duration-300 transform hover:scale-110" />
+    <FaLinkedin className="text-3xl text-gray-500 hover:text-[#0075b3] transition-all duration-300 transform hover:scale-110" />
   </a>,
 ];
 

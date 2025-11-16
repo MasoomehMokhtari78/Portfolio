@@ -13,7 +13,7 @@ import { scrollToSection } from "@/lib/utils";
 export const Header = () => {
   const navItems = [
     { name: "Stack", id: "stack" },
-    { name: "Project", id: "projects" },
+    { name: "Projects", id: "projects" },
     { name: "Contact", id: "contact-section" },
   ];
 
@@ -39,13 +39,18 @@ export const Header = () => {
               <Button
                 key={id}
                 variant="ghost"
-                className="hover:text-primary transition duration-300 ease-in-out"
+                className="text-[16px] hover:text-primary transition duration-300 ease-in-out"
                 onClick={() => scrollToSection(id)}
               >
                 {name}
               </Button>
             ))}
           </nav>
+          <a href="Masoomeh_Mokhtari_Resume.pdf" target="_blank">
+            <Button variant="outline" className="border-primary">
+              Resume
+            </Button>
+          </a>
           <div className="md:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -74,11 +79,6 @@ export const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <a href="Masoomeh_Mokhtari_Resume.pdf" target="_blank">
-            <Button variant="outline" className="border-primary">
-              Resume
-            </Button>
-          </a>
         </div>
       </div>
     </header>
