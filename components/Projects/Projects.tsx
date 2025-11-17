@@ -11,7 +11,7 @@ const projects = [
     title: "Finance+",
     desc: "Track and analyze your finances with interactive charts and AI-powered insights.",
     image: "/images/finance.png",
-    demo: "https://dashboard-git-eng-masoomehmokhtaris-projects.vercel.app/",
+    demo: "https://dashboard-ten-psi-13.vercel.app/",
     github: "https://github.com/MasoomehMokhtari78/dashboard",
   },
   {
